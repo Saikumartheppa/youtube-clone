@@ -1,10 +1,11 @@
+import Components from "./components"
 
 const App = () => {
   return (
     <>
-      <h1>Youtube Loading</h1>
+      <Components.Home />
     </>
   )
 }
 
-export default App
+export default App;
