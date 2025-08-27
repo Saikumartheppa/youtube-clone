@@ -1,0 +1,106 @@
+.container {
+  display: flex;
+  margin: 0 auto;
+  max-width: 96vw;
+  padding-top: 10px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 1);
+}
+.leftContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 10vw;
+}
+.leftContainer > span{
+    cursor: pointer;
+}
+.menuIcon{
+    padding: 5px;
+    border-radius: 50%;
+}
+.menuIcon:hover{
+  background-color: var(--secondary-bg);
+}
+.searchContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search {
+  width: 45vw;
+  display: flex;
+  align-items: center;
+}
+.search input {
+  width: 37vw;
+  padding: 10px 15px;
+  outline: none;
+  border: 1px solid #d3d3d3;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  font-size: 15px;
+  box-shadow: inset 0 1px 2px #eee;
+}
+.searchIcon {
+  border: 1px solid #d3d3d3;
+  padding: 6px 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: #f8f8f8;
+  border-left: none;
+  cursor: pointer;
+}
+.searchIcon:hover{
+  background-color: #f4f1f1;
+}
+.search img {
+  width: 22px;
+}
+.micIcon{
+    background-color: #f8f8f8;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.micIcon img{
+    width: 24px;
+    padding: 6px;
+}
+.micIcon:hover{
+    background-color: var(--secondary-bg);
+}
+.rightContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 15vw;
+}
+.create {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: var(--primary-bg);
+  border-radius: 50px;
+  cursor: pointer;
+  color: var(--primary-text);
+  font-weight: 500;
+  font-size: 14px;
+  gap: 10px;
+  padding: 5px 12px;
+}
+.create:hover{
+   background-color:  var(--secondary-bg);
+}
+.notification{
+    background-color: var(--primary-bg);
+    cursor: pointer;
+    padding: 5px 8px;
+    border-radius: 50%;
+}
+.notification:hover{
+    background-color: var(--secondary-bg);
+}
+.profile{
+    cursor: pointer;
+}
