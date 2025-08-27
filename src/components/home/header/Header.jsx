@@ -7,12 +7,18 @@ import ADD_ICON from "../../../assets/addIcon.svg";
 import NOTIFICATION_ICON from "../../../assets/notificationIcon.svg";
 import PROFILE_AVATAR from "../../../assets/profileLogo.svg";
 import MIC_ICON from "../../../assets/micIcon.svg";
+import { useDispatch } from "react-redux";
+import { toggleMenu } from "../../../store/slices/appSlice";
 
 const Header = () => {
+  const dispatch = useDispatch();
+  const toggleMenuHandler = () => {
+    dispatch(toggleMenu())
+  }
   return (
     <div className={styles.container}>
       <div className={styles.leftContainer}>
-        <span className={styles.menuIcon}>
+        <span className={styles.menuIcon} onClick={toggleMenuHandler}>
           <img src={MENU_ICON} alt="MENU_ICON" />
         </span>
         <span>

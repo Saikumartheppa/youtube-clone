@@ -12,6 +12,7 @@
   justify-content: space-between;
   align-items: center;
   width: 10vw;
+  gap: 20px;
 }
 .leftContainer > span{
     cursor: pointer;
@@ -103,4 +104,7 @@
 }
 .profile{
     cursor: pointer;
+}
+.profile img{
+  width: 35px;
 }

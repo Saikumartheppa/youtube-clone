@@ -1,0 +1,14 @@
+.items  ul{
+    list-style: none;
+    font-size: 10px;
+    text-align: center;
+    padding: 0 12px;
+}
+.items ul li{
+    cursor: pointer;
+    padding: 20px 0;
+}
+li:hover{
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 10%;
+}
