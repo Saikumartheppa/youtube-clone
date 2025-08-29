@@ -1,8 +1,10 @@
 import React from 'react'
-
+import {ButtonList} from "./button-list";
 const MainContainer = () => {
   return (
-    <div>MainContainer</div>
+    <div>
+      < ButtonList />
+    </div>
   )
 }
 
