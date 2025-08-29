@@ -127,7 +127,7 @@ const ListItems = () => {
       </div>
       <div>
         <div className={styles.itemsTitle}>
-          <h2 className={styles.title}>Subscriptions</h2>
+          <h2 className={styles.title}>Explore</h2>
           <img src={RIGHTSIDE_ICON} alt="RIGHTSIDE_ARROW" />
         </div>
         <ul>
