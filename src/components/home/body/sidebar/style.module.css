@@ -1,4 +1,4 @@
-.container{
-    color: aqua;
-    background-color: black;
+.sideBar{
+    max-height: 85vh;
+    overflow-y: scroll;
 }

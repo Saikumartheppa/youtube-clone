@@ -1,0 +1,8 @@
+.mainContainer{
+    margin: 0 25px;
+    max-width: 80vw;
+    padding: 0 25px;
+}
+.buttons{
+    position: fixed;
+}

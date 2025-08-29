@@ -3,7 +3,7 @@ import styles from "./style.module.css";
 import { MenuItems} from "./menu-items";
 const SideBar = () => {
   return (
-    <div>
+    <div className={styles.sideBar}>
       <MenuItems />
     </div>
   )
