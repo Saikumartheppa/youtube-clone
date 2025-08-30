@@ -1,12 +1,12 @@
 import React from "react";
 import { ButtonList } from "./button-list";
 import styles from "./style.module.css";
+import { VideoContainer } from "./video-container";
 const MainContainer = () => {
   return (
     <div className={styles.mainContainer}>
-      <div className={styles.buttons}>
-        <ButtonList />
-      </div>
+      <ButtonList />
+      <VideoContainer />
     </div>
   );
 };

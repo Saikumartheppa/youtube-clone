@@ -1,4 +1,5 @@
 .mainContainer{
-    margin: 0 25px;
-    max-width: 75vw;
+    margin: 0 25px 30px 25px;
+    max-width: 76vw;
+    overflow: hidden;
 }
