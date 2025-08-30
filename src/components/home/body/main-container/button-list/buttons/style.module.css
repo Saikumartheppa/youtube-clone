@@ -5,4 +5,5 @@
     background-color: var(--primary-bg);
     border-radius: 8px;
     cursor: pointer;
+    white-space: nowrap;
 }

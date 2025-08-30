@@ -1,1 +1,1 @@
-export const buttonsList = ["All" , "Music" , "Trending", "Live" , "Thrillers" , "Watched" , "Recently uploaded" ," New to you" , "Presentations"]; 
+export const buttonsList = ["All" , "Music" , "Trending", "Live" , "Thrillers" , "Watched" , "Recently uploaded" ," New to you" , "Presentations" , "Tamil cinema", "Telugu cinema" , "Movies" , "Trending", "Live" , "Thrillers" , "Watched" , "Recently uploaded" ,"New to you" , "Presentations" , "Tamil cinema", "Telugu cinema" , "Movies"]; 

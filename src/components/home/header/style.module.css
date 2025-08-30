@@ -1,11 +1,12 @@
 .container {
   display: flex;
   width: 96vw;
-  padding: 1vw 1.5vw 0 1.5vw;
+  padding: 2.5vh 1.5vw 2.5vh 1.5vw;
   justify-content: space-between;
   align-items: center;
   background-color: rgba(255, 255, 255, 1);
   position: fixed;
+  z-index: 1000;
 }
 .leftContainer {
   display: flex;
@@ -14,14 +15,14 @@
   width: 10vw;
   gap: 20px;
 }
-.leftContainer > span{
-    cursor: pointer;
+.leftContainer > span {
+  cursor: pointer;
 }
-.menuIcon{
-    padding: 5px;
-    border-radius: 50%;
+.menuIcon {
+  padding: 5px;
+  border-radius: 50%;
 }
-.menuIcon:hover{
+.menuIcon:hover {
   background-color: var(--secondary-bg);
 }
 .searchContainer {
@@ -55,23 +56,23 @@
   border-left: none;
   cursor: pointer;
 }
-.searchIcon:hover{
+.searchIcon:hover {
   background-color: #f4f1f1;
 }
 .search img {
   width: 22px;
 }
-.micIcon{
-    background-color: #f8f8f8;
-    cursor: pointer;
-    border-radius: 50%;
+.micIcon {
+  background-color: #f8f8f8;
+  cursor: pointer;
+  border-radius: 50%;
 }
-.micIcon img{
-    width: 24px;
-    padding: 6px;
+.micIcon img {
+  width: 24px;
+  padding: 6px;
 }
-.micIcon:hover{
-    background-color: var(--secondary-bg);
+.micIcon:hover {
+  background-color: var(--secondary-bg);
 }
 .rightContainer {
   display: flex;
@@ -92,21 +93,21 @@
   gap: 10px;
   padding: 5px 12px;
 }
-.create:hover{
-   background-color:  var(--secondary-bg);
+.create:hover {
+  background-color: var(--secondary-bg);
 }
-.notification{
-    background-color: var(--primary-bg);
-    cursor: pointer;
-    padding: 5px 8px;
-    border-radius: 50%;
+.notification {
+  background-color: var(--primary-bg);
+  cursor: pointer;
+  padding: 5px 8px;
+  border-radius: 50%;
 }
-.notification:hover{
-    background-color: var(--secondary-bg);
+.notification:hover {
+  background-color: var(--secondary-bg);
 }
-.profile{
-    cursor: pointer;
+.profile {
+  cursor: pointer;
 }
-.profile img{
+.profile img {
   width: 35px;
 }
