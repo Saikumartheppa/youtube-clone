@@ -1,7 +1,7 @@
 .container {
   display: flex;
   width: 96vw;
-  padding: 2.5vh 1.5vw 2.5vh 1.5vw;
+  padding: 2.5vh 1.5vw 1.5vh 1.5vw;
   justify-content: space-between;
   align-items: center;
   background-color: rgba(255, 255, 255, 1);

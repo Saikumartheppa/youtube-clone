@@ -1,15 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const appSlice = createSlice({
-    name:"app",
-    initialState:{
-       isMenuOpen : true,
+  name: "app",
+  initialState: {
+    isMenuOpen: true,
+    channelsInfo: {},
+  },
+  reducers: {
+    toggleMenu: (state) => {
+      state.isMenuOpen = !state.isMenuOpen;
     },
-    reducers:{
-       toggleMenu : (state) => {
-          state.isMenuOpen = !state.isMenuOpen;
-       }
-    }
+    addChannelInfo: (state, action) => {
+      const { channelId, data } = action.payload;
+      state.channelsInfo[channelId] = data;
+    },
+  },
 });
-export const {toggleMenu} = appSlice.actions;
-export default appSlice.reducer
+export const { toggleMenu, addChannelInfo } = appSlice.actions;
+export default appSlice.reducer;
