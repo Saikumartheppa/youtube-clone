@@ -1,0 +1,59 @@
+.thumbnailIconContainer {
+  width: 330px;
+  height: 200px;
+  border-radius: 10px;
+}
+.thumbnailIconContainer img{
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+.cardInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 330px;
+  margin-top: 10px;
+  gap: 20px;
+}
+.channelProfile img{
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+.videoInfo{
+  overflow: hidden; /* Hides content that overflows the element's box */
+  display: -webkit-box; /* Enables flexible box layout for multi-line truncation */
+  -webkit-line-clamp: 2; /* Limits the content to 2 lines */
+  -webkit-box-orient: vertical; /* Arranges the content vertically within the box */
+  text-overflow: ellipsis; /* Adds an ellipsis (...) at the end of the truncated text */
+  white-space: normal;
+  font-size: 16px;
+  font-weight: 500;
+}
+.menuIconContainer {
+  height: 36px;
+  width: 36px;
+}
+.channelTitle{
+    display: flex;
+   color:  #606060;
+   margin-left: 56px;
+   gap: 5px;
+   padding: 5px 0;
+}
+.channelTitle h2{
+    font-weight: 400;
+   font-size: 14px;
+   margin: 0;
+}
+.channelTitle img{
+  width: 14px;
+  color: #606060;
+}
+.statistics{
+   font-weight: 400;
+   font-size: 14px;
+   margin-left: 56px;
+   color: #606060;
+}
