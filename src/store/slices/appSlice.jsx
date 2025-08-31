@@ -10,11 +10,14 @@ const appSlice = createSlice({
     toggleMenu: (state) => {
       state.isMenuOpen = !state.isMenuOpen;
     },
+    closeMenu: (state) => {
+      state.isMenuOpen = true;
+    },
     addChannelInfo: (state, action) => {
       const { channelId, data } = action.payload;
       state.channelsInfo[channelId] = data;
     },
   },
 });
-export const { toggleMenu, addChannelInfo } = appSlice.actions;
+export const { toggleMenu, addChannelInfo , closeMenu } = appSlice.actions;
 export default appSlice.reducer;
