@@ -5,4 +5,6 @@ export const GET_CHANNEL_API = (channelId) =>  `https://youtube.googleapis.com/y
 
 export const GET_YOUTUBE_VIDEO_BY_ID = (videoId) => `https://www.youtube.com/embed/${videoId}?autoplay=1`;
 
+export const GET_YOUTUBE_SEARCH_SUGGESTIONS = (searchQuery) => `http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=${searchQuery}`
+
 export const buttonsList = ["All" , "Music" , "Trending", "Live" , "Thrillers" , "Watched" , "Recently uploaded" ," New to you" , "Presentations" , "Tamil cinema", "Telugu cinema" , "Movies" , "Trending", "Live" , "Thrillers" , "Watched" , "Recently uploaded" ,"New to you" , "Presentations" , "Tamil cinema", "Telugu cinema" , "Movies"]; 

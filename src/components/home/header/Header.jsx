@@ -10,11 +10,16 @@ import MIC_ICON from "../../../assets/micIcon.svg";
 import { useDispatch } from "react-redux";
 import { toggleMenu } from "../../../store/slices/appSlice";
 import { Link } from "react-router-dom";
+import useYoutubeSuggestions from "../../../hooks/useYoutubeSuggestions";
 
 const Header = () => {
   const dispatch = useDispatch();
+  const {searchQuery , setSearchQuery , suggestions} = useYoutubeSuggestions();
   const toggleMenuHandler = () => {
     dispatch(toggleMenu())
+  }
+  const onChangeHandler = (e) => {
+     setSearchQuery(e.target.value);
   }
   return (
     <div className={styles.container}>
@@ -30,7 +35,7 @@ const Header = () => {
       <div className={styles.searchContainer}>
         <div className={styles.search}>
           <span>
-            <input type="text" placeholder="Search" />
+            <input value={searchQuery} onChange={onChangeHandler} type="text" placeholder="Search" />
           </span>
           <span className={styles.searchIcon}>
             <img src={SEARCH_ICON} alt="SEARCH_ICON" />

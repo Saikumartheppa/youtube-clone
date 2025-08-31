@@ -17,7 +17,7 @@ const VideoContainer = () => {
   return (
     <div className={`${styles.videoContainer} ${!isMenuOpen ? styles.menuOpen : styles.menuClose}`}>
       {videos.map((video) => (
-       <Link to={`/watch?v=${video.id}`}> <VideoCard key={video.id} isMenuOpen={isMenuOpen} info={video} /></Link>
+       <Link to={`/watch?v=${video.id}`} key={video.id}> <VideoCard isMenuOpen={isMenuOpen} info={video} /></Link>
       ))}
     </div>
   );
