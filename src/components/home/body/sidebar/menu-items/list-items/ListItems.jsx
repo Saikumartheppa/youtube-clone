@@ -26,16 +26,19 @@ import SETTINGS_ICON from "../../../../../../assets/settingsIcon.svg";
 import REPORT_ICON from "../../../../../../assets/reportIcon.svg";
 import HELP_ICON from "../../../../../../assets/helpIcon.svg";
 import FEEDBACK_ICON from "../../../../../../assets/feedbackIcon.svg";
+import { Link } from "react-router-dom";
 const ListItems = () => {
   return (
     <div className={styles.container}>
       <ul>
-        <li>
-          <div>
-            <img src={HOME_ICON} alt="HOME_ICON" />
-          </div>
-          <div>Home</div>
-        </li>
+        <Link to={"/"}>
+          <li>
+            <div>
+              <img src={HOME_ICON} alt="HOME_ICON" />
+            </div>
+            <div>Home</div>
+          </li>
+        </Link>
         <li>
           <div>
             <img src={SHORTS_ICON} alt="SHORTS_ICON" />

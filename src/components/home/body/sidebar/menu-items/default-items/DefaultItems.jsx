@@ -6,33 +6,33 @@ import PROFILE_AVATAR from "../../../../../../assets/profileLogo.svg";
 import styles from "./style.module.css";
 const DefaultItems = () => {
   return (
-    <div className={styles.items}>
-      <ul>
-        <li>
+    <div className={styles.defaultItems}>
+      <ul className={styles.defaultItemsList}>
+        <li className={styles.defaultItemsListItem}>
           <div>
             <img src={HOME_ICON} alt="HOME_ICON" />
           </div>
           <div>Home</div>
         </li>
-        <li>
+        <li className={styles.defaultItemsListItem}>
           <div>
             <img src={SHORTS_ICON} alt="SHORTS_ICON" />
           </div>
           <div>Shorts</div>
         </li>
-        <li>
+        <li className={styles.defaultItemsListItem}>
           <div>
             <img src={SUBSCRIPTIONS_ICON} alt="SUBSCRIPTIONS_ICON" />
           </div>
           <div>Subscriptions</div>
         </li>
-        <li>
+        <li className={styles.defaultItemsListItem}>
           <div>
             <img src={PROFILE_AVATAR} alt="PROFILE_AVATAR" />
           </div>
           <div>You</div>
         </li>
-        <li>
+        <li className={styles.defaultItemsListItem}>
           <div>
             <img src={DOWNLOAD_ICON} alt="DOWNLOAD_ICON" />
           </div>

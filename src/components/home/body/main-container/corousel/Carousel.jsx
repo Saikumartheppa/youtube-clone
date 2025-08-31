@@ -2,11 +2,13 @@ import React, { useEffect, useRef, useState } from "react";
 import RIGHTARROWICON from "../../../../../assets/rightSideArrowIcon.svg";
 import LEFTARROWICON from "../../../../../assets/leftArrowIcon.svg";
 import styles from "./style.module.css";
+import { useSelector } from "react-redux";
+
 const Carousel = ({ children }) => {
   const containerRef = useRef(null);
   const [showLeft, setShowLeft] = useState(false);
   const [showRight, setShowRight] = useState(true);
-
+  const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
   const checkButtons = () => {
     const container = containerRef.current;
     if (!container) return;
@@ -45,7 +47,7 @@ const Carousel = ({ children }) => {
   }, []);
 
   return (
-    <div className={styles.carouselWrapper}>
+    <div className={`${styles.carouselWrapper} ${!isMenuOpen ? styles.menuOpen : styles.menuClose}`}>
       {showLeft && (
         <button
           className={`${styles.arrowButton} ${styles.left}`}

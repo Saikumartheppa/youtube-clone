@@ -7,11 +7,14 @@
   z-index: 1000;          
   padding: 10px 0;
   overflow: hidden;
-   max-width: 76vw;
-   background-color: white;
+  background-color: white;
 }
-
-
+.menuOpen{
+   max-width: 76vw;
+}
+.menuClose{
+   max-width: 89vw;
+}
 .carouselContainer {
   overflow-x: auto;
   overflow-y: hidden;

@@ -1,5 +1,10 @@
 .mainContainer{
     margin: 0 25px 30px 25px;
-    max-width: 76vw;
     overflow: hidden;
+}
+.MenuOpen{
+    max-width: 76vw;
+}
+.menuClose{
+    max-width: 85vw;
 }

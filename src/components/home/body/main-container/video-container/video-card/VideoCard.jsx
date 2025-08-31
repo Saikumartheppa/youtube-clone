@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import useChannelInfo from "../../../../../../hooks/useChannelInfo";
 import MEMU_ICON from "../../../../../../assets/menuOptionsIcon.svg";
 import CHANNEL_RIGHT_ICON from "../../../../../../assets/channelRightIcon.svg";
-const VideoCard = ({ info }) => {
+const VideoCard = ({ isMenuOpen , info }) => {
   if (!info) return null;
   const { snippet, statistics } = info;
   const { thumbnails, title, channelTitle, channelId } = snippet;
@@ -12,10 +12,10 @@ const VideoCard = ({ info }) => {
   const channelInfo = useChannelInfo(channelId);
   return (
     <div className={styles.cardContainer}>
-      <div className={styles.thumbnailIconContainer}>
+      <div className={`${styles.thumbnailIconContainer} ${!isMenuOpen ? styles.menuOpen : styles.menuClose}`}>
         <img src={thumbnails?.maxres?.url} alt="Thumbnail" />
       </div>
-      <div className={styles.cardInfo}>
+      <div className={`${styles.cardInfo} ${!isMenuOpen ? styles.cardOpenWidth : styles.cardCLosedWidth}`}>
         <div className={styles.channelProfile}>
           <img
             src={channelInfo?.snippet?.thumbnails?.medium?.url}
