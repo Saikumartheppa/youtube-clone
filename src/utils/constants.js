@@ -3,5 +3,6 @@ export const POPULAR_VIDEO_API = `https://youtube.googleapis.com/youtube/v3/vide
 
 export const GET_CHANNEL_API = (channelId) =>  `https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=${channelId}&key=${YTAPIKEY}`;
 
+export const GET_YOUTUBE_VIDEO_BY_ID = (videoId) => `https://www.youtube.com/embed/${videoId}?autoplay=1`;
 
 export const buttonsList = ["All" , "Music" , "Trending", "Live" , "Thrillers" , "Watched" , "Recently uploaded" ," New to you" , "Presentations" , "Tamil cinema", "Telugu cinema" , "Movies" , "Trending", "Live" , "Thrillers" , "Watched" , "Recently uploaded" ,"New to you" , "Presentations" , "Tamil cinema", "Telugu cinema" , "Movies"]; 
