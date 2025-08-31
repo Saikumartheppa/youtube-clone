@@ -9,6 +9,7 @@ import PROFILE_AVATAR from "../../../assets/profileLogo.svg";
 import MIC_ICON from "../../../assets/micIcon.svg";
 import { useDispatch } from "react-redux";
 import { toggleMenu } from "../../../store/slices/appSlice";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -21,9 +22,10 @@ const Header = () => {
         <span className={styles.menuIcon} onClick={toggleMenuHandler}>
           <img src={MENU_ICON} alt="MENU_ICON" />
         </span>
-        <span>
+        <Link to={"/"}><span>
           <img src={YOUTUBE_ICON} alt="YOUTUBE_ICON"></img>
         </span>
+        </Link>
       </div>
       <div className={styles.searchContainer}>
         <div className={styles.search}>

@@ -1,15 +1,38 @@
 import { Provider } from "react-redux";
-import {Home} from "./components"
+import { Body, Home, MainContainer } from "./components";
 import appStore from "./store/appStore";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { WatchPage } from "./pages";
 
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+    children: [
+      {
+        element: <Body />,
+        children: [
+          {
+            path: "/",
+            element: <MainContainer />,
+          },
+          {
+            path: "watch",
+            element: <WatchPage />,
+          },
+        ],
+      },
+    ],
+  },
+]);
 const App = () => {
   return (
     <Provider store={appStore}>
-    <>
-      <Home />
-    </>
+      <>
+        <RouterProvider router={appRouter} />
+      </>
     </Provider>
-  )
-}
+  );
+};
 
 export default App;

@@ -1,4 +1,4 @@
-import {Body} from  "./body";
+import { Outlet } from "react-router-dom";
 import { Header } from "./header";
 import styles from "./style.module.css";
 
@@ -7,7 +7,7 @@ const Home = () => {
         <>
         <div className={styles.container}></div>
         <Header />
-        <Body />
+        <Outlet/>
         </>
     )
 }
