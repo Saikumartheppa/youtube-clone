@@ -2,9 +2,9 @@
     margin: 0 25px 30px 25px;
     overflow: hidden;
 }
-.MenuOpen{
+.menuOpen{
     max-width: 76vw;
 }
 .menuClose{
-    max-width: 85vw;
+    max-width: 90vw;
 }
