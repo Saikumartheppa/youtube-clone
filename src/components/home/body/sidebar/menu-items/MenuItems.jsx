@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 const MenuItems = () => {
   const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
 
-  return !isMenuOpen ? (
+  return isMenuOpen ? (
     <div className={styles.showScrollBar}>
       <ListItems />
     </div>

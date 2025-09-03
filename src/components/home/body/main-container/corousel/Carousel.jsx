@@ -47,7 +47,7 @@ const Carousel = ({ children }) => {
   }, []);
 
   return (
-    <div className={`${styles.carouselWrapper} ${!isMenuOpen ? styles.menuOpen : styles.menuClose}`}>
+    <div className={`${styles.carouselWrapper} ${isMenuOpen ? styles.menuOpen : styles.menuClose}`}>
       {showLeft && (
         <button
           className={`${styles.arrowButton} ${styles.left}`}

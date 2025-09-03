@@ -12,10 +12,10 @@ const VideoCard = ({ isMenuOpen , info }) => {
   const channelInfo = useChannelInfo(channelId);
   return (
     <div className={styles.cardContainer}>
-      <div className={`${styles.thumbnailIconContainer} ${!isMenuOpen ? styles.menuOpen : styles.menuClose}`}>
+      <div className={`${styles.thumbnailIconContainer} ${isMenuOpen ? styles.menuOpen : styles.menuClose}`}>
         <img src={thumbnails?.maxres?.url} alt="Thumbnail" />
       </div>
-      <div className={`${styles.cardInfo} ${!isMenuOpen ? styles.cardOpenWidth : styles.cardCLosedWidth}`}>
+      <div className={`${styles.cardInfo} ${isMenuOpen ? styles.cardOpenWidth : styles.cardCLosedWidth}`}>
         <div className={styles.channelProfile}>
           <img
             src={channelInfo?.snippet?.thumbnails?.medium?.url}
