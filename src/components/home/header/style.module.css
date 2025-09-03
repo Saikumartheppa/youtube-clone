@@ -27,7 +27,7 @@
 }
 .searchContainer {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   width: 50vw;
   margin: 0px 5vw;
@@ -73,6 +73,37 @@
 }
 .micIcon:hover {
   background-color: var(--secondary-bg);
+}
+.suggestionsContainer {
+  position: fixed;
+  top: 60px;
+  width: 37vw;
+  background-color: white;
+  border: 1px solid #d5cccc;
+  border-radius: 10px;
+  padding: 5px 15px;
+}
+.suggestionsList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.suggestionItem {
+  display: flex;
+  padding: 12px 0px;
+  gap: 10px;
+  align-items: center;
+  font-size: 16px;
+  border-radius: 10px;
+}
+.suggestionItem:hover{
+  background-color: #f8f8f8;
+}
+.suggestionItem li:hover{
+  background:none;
+}
+.suggestionItem img{
+  width: 16px;
 }
 .rightContainer {
   display: flex;

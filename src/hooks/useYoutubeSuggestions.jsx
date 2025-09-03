@@ -9,7 +9,6 @@ const useYoutubeSuggestions = () => {
      const data = await fetch(GET_YOUTUBE_SEARCH_SUGGESTIONS(searchQuery));
      const json = await data.json();
      setSuggestions(json[1]);
-
   }
   useEffect(()=>{
      const timer = setTimeout(() => getSearchSuggestions(), 200);
