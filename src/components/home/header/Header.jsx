@@ -14,7 +14,7 @@ import useYoutubeSuggestions from "../../../hooks/useYoutubeSuggestions";
 
 const Header = () => {
   const dispatch = useDispatch();
-  const [showSuggestions , setShowSuggestions] = useState(false);
+  const [showSuggestions, setShowSuggestions] = useState(false);
   const { searchQuery, setSearchQuery, suggestions } = useYoutubeSuggestions();
   const toggleMenuHandler = () => {
     dispatch(toggleMenu());
@@ -53,17 +53,28 @@ const Header = () => {
         <div className={styles.micIcon}>
           <img src={MIC_ICON} alt="MIC_ICON" />
         </div>
-        {showSuggestions && suggestions.length > 0 && <div className={styles.suggestionsContainer}>
-          <ul className={styles.suggestionsList}>
-            {suggestions.map((s , index) => (
-               <div key={index}
-               className={styles.suggestionItem}>
-              <img src={SEARCH_ICON} alt="SEARCH_ICON" />
-              <li>{s}</li>
-            </div>
-            ))}
-          </ul>
-        </div>}
+        {showSuggestions && suggestions.length > 0 && (
+          <div
+            className={styles.suggestionsContainer}
+            onMouseDown={(e) => e.preventDefault()}
+          >
+            <ul className={styles.suggestionsList}>
+              {suggestions.map((s, index) => (
+                <div
+                  onClick={() => {
+                    setSearchQuery(s);
+                    setShowSuggestions(false);
+                  }}
+                  key={index}
+                  className={styles.suggestionItem}
+                >
+                  <img src={SEARCH_ICON} alt="SEARCH_ICON" />
+                  <li>{s}</li>
+                </div>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
       <div className={styles.rightContainer}>
         <div className={styles.create}>
