@@ -24,7 +24,7 @@ const Comment = ({ data }) => {
         </div>
       </div>
       {/* Show replies button only if there are replies */}
-      {replies && replies.length > 0 && (
+      {replies.length > 0 && (
         <button className={styles.showRepliesButton} onClick={toggleReplies}>
           <span>
             {showReplies ? <img src={DOWNARRAOWICON} alt='DOWNARRAOWICON'/> : <img src={UPARRAOWICON} alt='UPARRAOWICON'/>}
@@ -34,7 +34,7 @@ const Comment = ({ data }) => {
       )}
 
       {/* Conditionally render replies list */}
-      {showReplies && replies && replies.length > 0 && (
+      {showReplies  && (
         <div className={styles.repliesContainer}>
           <CommentsList comments={replies} />
         </div>
