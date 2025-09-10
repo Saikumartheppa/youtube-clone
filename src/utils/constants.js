@@ -1,5 +1,5 @@
 const YTAPIKEY=import.meta.env.VITE_YOUTUBE_KEY;
-export const POPULAR_VIDEO_API = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=5&regionCode=IN&key=${YTAPIKEY}`;
+export const POPULAR_VIDEO_API = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=10&regionCode=IN&key=${YTAPIKEY}`;
 
 export const GET_CHANNEL_API = (channelId) =>  `https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=${channelId}&key=${YTAPIKEY}`;
 
