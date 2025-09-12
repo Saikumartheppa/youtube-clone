@@ -3,6 +3,7 @@ import { Body, Home, MainContainer } from "./components";
 import appStore from "./store/appStore";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { WatchPage } from "./pages";
+import DemoPage from "./pages/demoPage/DemoPage";
 
 const appRouter = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const appRouter = createBrowserRouter([
           {
             path: "watch",
             element: <WatchPage />,
+          },
+          {
+            path: "demo",
+            element: <DemoPage />,
           },
         ],
       },

@@ -40,11 +40,11 @@ const VideoContainer = () => {
     >
       {items.map((video, index) => {
         return index === items.length - 1 ? (
-          <Link to={`/watch?v=${video.id}`} ref={lastVideoRef} key={video.id}>
+          <Link to={`/watch?v=${video.id}`} ref={lastVideoRef} key={video.id} state={{isdemomode:false}}>
             <VideoCard isMenuOpen={isMenuOpen} info={video} />
           </Link>
         ) : (
-          <Link to={`/watch?v=${video.id}`} key={video.id}>
+          <Link to={`/watch?v=${video.id}`} key={video.id} state={{isdemomode:false}}>
             <VideoCard isMenuOpen={isMenuOpen} info={video} />
           </Link>
         );

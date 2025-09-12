@@ -2,14 +2,20 @@ import React, { useEffect } from "react";
 import styles from "./style.module.css";
 import { useDispatch } from "react-redux";
 import { closeMenu } from "../../store/slices/appSlice";
-import { useSearchParams } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 import { GET_YOUTUBE_VIDEO_BY_ID } from "../../utils/constants";
 import { CommentsContainer } from "../../components/home/body/main-container/video-container/commentsContainer";
+import { moveWatchedVideoToEnd } from "../../store/slices/demoVideoSlice";
 const WatchPage = () => {
   const dispatch = useDispatch();
+  const location = useLocation();
+  const {isdemomode } = location.state || {isdemomode:false};
   const [videoIdParams] = useSearchParams();
   const videoId = videoIdParams.get("v");
   useEffect(() => {
+    if(isdemomode){
+       dispatch(moveWatchedVideoToEnd(videoId));
+    }
     dispatch(closeMenu());
   }, []);
   return (
