@@ -2,8 +2,7 @@ import { Provider } from "react-redux";
 import { Body, Home, MainContainer } from "./components";
 import appStore from "./store/appStore";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { WatchPage } from "./pages";
-import DemoPage from "./pages/demoPage/DemoPage";
+import { WatchPage , LoginPage , DemoPage} from "./pages";
 
 const appRouter = createBrowserRouter([
   {
@@ -28,6 +27,10 @@ const appRouter = createBrowserRouter([
         ],
       },
     ],
+  },
+  {
+    path: "login",
+    element: <LoginPage />,
   },
 ]);
 const App = () => {
