@@ -19,10 +19,10 @@ const appSlice = createSlice({
       state.channelsInfo[channelId] = data;
     },
     addUser: (state, action) => {
-      return action.payload;
+       state.user = action.payload;
     },
     removeUser: (state, action) => {
-      return null;
+      state.user = null;
     },
   },
 });

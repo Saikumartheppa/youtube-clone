@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./style.module.css";
 import MENU_ICON from "../../../assets/menuHamburger.svg";
 import YOUTUBE_ICON from "../../../assets/youtubeIcon.svg";
@@ -8,20 +8,55 @@ import NOTIFICATION_ICON from "../../../assets/notificationIcon.svg";
 import PROFILE_AVATAR from "../../../assets/profileLogo.svg";
 import MIC_ICON from "../../../assets/micIcon.svg";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleMenu } from "../../../store/slices/appSlice";
-import { Link } from "react-router-dom";
+import {
+  addUser,
+  removeUser,
+  toggleMenu,
+} from "../../../store/slices/appSlice";
+import { Link, useNavigate } from "react-router-dom";
 import useYoutubeSuggestions from "../../../hooks/useYoutubeSuggestions";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { auth } from "../../../utils/firebase";
 
 const Header = () => {
   const dispatch = useDispatch();
-  const  user  = useSelector((store) => store.app.user);
+  const navigate = useNavigate();
+  const user = useSelector((store) => store.app.user);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const { searchQuery, setSearchQuery, suggestions } = useYoutubeSuggestions();
+  useEffect(() => {
+    const unSubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const { uid, email, displayName, photoURL } = user;
+        dispatch(
+          addUser({
+            uid: uid,
+            email: email,
+            displayName: displayName,
+            photoURL: photoURL,
+          })
+        );
+        navigate("/");
+      } else {
+        dispatch(removeUser());
+        navigate("/login");
+      }
+    });
+    // unSubscribe when component unMounts
+    return () => unSubscribe();
+  }, []);
   const toggleMenuHandler = () => {
     dispatch(toggleMenu());
   };
   const onChangeHandler = (e) => {
     setSearchQuery(e.target.value);
+  };
+  const handleSignOut = () => {
+    signOut(auth)
+      .then(() => {})
+      .catch((error) => {
+        navigate("/errorPage");
+      });
   };
   return (
     <div className={styles.container}>
@@ -92,9 +127,17 @@ const Header = () => {
           <span className={styles.notification}>
             <img src={NOTIFICATION_ICON} alt="NOTIFICATION_ICON" />
           </span>
-          <span className={styles.profile}>
-            <img src={PROFILE_AVATAR} alt="PROFILE_AVATAR"></img>
-          </span>
+          <div className={styles.profileMenu}>
+            <img
+              src={user.photoURL || PROFILE_AVATAR}
+              alt="profile"
+              className={styles.avatar}
+            />
+            <div className={styles.dropdown}>
+              <p>{user.displayName}</p>
+              <button onClick={handleSignOut}>Sign Out</button>
+            </div>
+          </div>
         </div>
       ) : (
         <span className={styles.profile}>

@@ -2,7 +2,13 @@ import { useState } from "react";
 import styles from "./style.module.css";
 import { Header } from "../../components";
 import { validateField } from "../../utils/validate";
+import { auth } from "../../utils/firebase";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { addUser } from "../../store/slices/appSlice";
+import { PROFILE_ICON } from "../../utils/constants";
+import { useDispatch } from "react-redux";
 const LoginPage = () => {
+  const dispatch = useDispatch();
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [formData, setFormData] = useState({
     fullName: "",
@@ -55,7 +61,51 @@ const LoginPage = () => {
       console.log("Form has errors:", newErrors);
       return;
     }
-
+    if (!isSignInForm) {
+      createUserWithEmailAndPassword(
+        auth,
+        formData.email,
+        formData.password,
+      )
+        .then((userCredential) => {
+          // Signed up
+          const user = userCredential.user;
+          updateProfile(user, {
+            displayName: formData.fullName,
+            photoURL: PROFILE_ICON,
+          })
+            .then(() => {
+              console.log(auth.currentUser);
+              const {uid , email , displayName , photoURL} = auth.currentUser;
+              dispatch(addUser({
+                uid : uid,
+                email: email,
+                displayName : displayName,
+                photoURL : photoURL,
+              }));
+            })
+            .catch((error) => {
+            });
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+        });
+    } else {
+      signInWithEmailAndPassword(
+        auth,
+        formData.email,
+        formData.password,
+      )
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+        });
+    }
     console.log("Form submitted successfully!", formData);
   };
   return (

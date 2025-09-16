@@ -83,3 +83,5 @@ export const commentsData = [
     replies: [],
   },
 ];
+
+export const PROFILE_ICON =  `https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500`;
