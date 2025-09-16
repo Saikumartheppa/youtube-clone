@@ -5,6 +5,7 @@ const appSlice = createSlice({
   initialState: {
     isMenuOpen: true,
     channelsInfo: {},
+    user: null,
   },
   reducers: {
     toggleMenu: (state) => {
@@ -17,7 +18,13 @@ const appSlice = createSlice({
       const { channelId, data } = action.payload;
       state.channelsInfo[channelId] = data;
     },
+    addUser: (state, action) => {
+      return action.payload;
+    },
+    removeUser: (state, action) => {
+      return null;
+    },
   },
 });
-export const { toggleMenu, addChannelInfo , closeMenu } = appSlice.actions;
+export const { toggleMenu, addChannelInfo, closeMenu , addUser , removeUser } = appSlice.actions;
 export default appSlice.reducer;
