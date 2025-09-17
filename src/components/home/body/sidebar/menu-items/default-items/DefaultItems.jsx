@@ -4,7 +4,9 @@ import SUBSCRIPTIONS_ICON from "../../../../../../assets/subscriptionsIcon.svg";
 import DOWNLOAD_ICON from  "../../../../../../assets/downloadIcon.svg";
 import PROFILE_AVATAR from "../../../../../../assets/profileLogo.svg";
 import styles from "./style.module.css";
+import { useSelector } from "react-redux";
 const DefaultItems = () => {
+  const user = useSelector((store) => store.app.user);
   return (
     <div className={styles.defaultItems}>
       <ul className={styles.defaultItemsList}>
@@ -28,7 +30,7 @@ const DefaultItems = () => {
         </li>
         <li className={styles.defaultItemsListItem}>
           <div>
-            <img src={PROFILE_AVATAR} alt="PROFILE_AVATAR" />
+            <img className={styles.profileIcon} src={user.photoURL || PROFILE_AVATAR} alt="PROFILE_AVATAR" />
           </div>
           <div>You</div>
         </li>

@@ -3,7 +3,7 @@
 /* Apply globally */
 body {
   margin: 0;
-  padding: 0;
+  padding: 0 1.5vw;
   font-family: 'Roboto', sans-serif;
   background-color: #ffffff;
 }
