@@ -19,7 +19,7 @@ const WatchPage = () => {
     dispatch(closeMenu());
   }, []);
   return (
-    <div>
+    <div className={styles.watchPage}>
       <div>
         <iframe
           width="800"
