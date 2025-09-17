@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./style.module.css";
 import { Header } from "../../components";
 import { validateField } from "../../utils/validate";
@@ -6,11 +6,12 @@ import { auth } from "../../utils/firebase";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { addUser } from "../../store/slices/appSlice";
 import { PROFILE_ICON } from "../../utils/constants";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 const LoginPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const user = useSelector((store) => store.app.user);
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [formData, setFormData] = useState({
     fullName: "",
@@ -47,6 +48,12 @@ const LoginPage = () => {
       formData.email && !errors.email &&
       formData.password && !errors.password
   );
+  useEffect(() => {
+    if (user) {
+      navigate("/");
+    }
+  }, [user]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
