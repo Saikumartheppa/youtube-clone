@@ -36,7 +36,6 @@ const Header = () => {
             photoURL: photoURL,
           })
         );
-        navigate("/");
       } else {
         dispatch(removeUser());
         navigate("/login");

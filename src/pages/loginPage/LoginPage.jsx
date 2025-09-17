@@ -7,8 +7,10 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfi
 import { addUser } from "../../store/slices/appSlice";
 import { PROFILE_ICON } from "../../utils/constants";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 const LoginPage = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [formData, setFormData] = useState({
     fullName: "",
@@ -83,6 +85,7 @@ const LoginPage = () => {
                 displayName : displayName,
                 photoURL : photoURL,
               }));
+              navigate("/");
             })
             .catch((error) => {
             });
@@ -99,7 +102,7 @@ const LoginPage = () => {
       )
         .then((userCredential) => {
           // Signed in
-          const user = userCredential.user;
+          navigate("/");
         })
         .catch((error) => {
           const errorCode = error.code;
