@@ -84,7 +84,6 @@ const LoginPage = () => {
             photoURL: PROFILE_ICON,
           })
             .then(() => {
-              console.log(auth.currentUser);
               const {uid , email , displayName , photoURL} = auth.currentUser;
               dispatch(addUser({
                 uid : uid,
@@ -95,11 +94,11 @@ const LoginPage = () => {
               navigate("/");
             })
             .catch((error) => {
+              setErrors((prev) => ({ ...prev, email: error.message }));
             });
         })
         .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
+          setErrors((prev) => ({ ...prev, email: error.message }));
         });
     } else {
       signInWithEmailAndPassword(
@@ -112,8 +111,7 @@ const LoginPage = () => {
           navigate("/");
         })
         .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
+          setErrors((prev) => ({ ...prev, password: error.message }));
         });
     }
     console.log("Form submitted successfully!", formData);
