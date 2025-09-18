@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./style.module.css";
 import MENU_ICON from "../../../assets/menuHamburger.svg";
 import YOUTUBE_ICON from "../../../assets/youtubeIcon.svg";
+import YOUTUBE_MOBILE_ICON from "../../../assets/youtube_favicon.png";
 import SEARCH_ICON from "../../../assets/searchIcon.svg";
 import ADD_ICON from "../../../assets/addIcon.svg";
 import NOTIFICATION_ICON from "../../../assets/notificationIcon.svg";
@@ -66,8 +67,11 @@ const Header = () => {
           </span>
         )}
         <Link to={"/"}>
-          <span>
+          <span className={styles.webYTIcon}>
             <img src={YOUTUBE_ICON} alt="YOUTUBE_ICON"></img>
+          </span>
+          <span className={styles.mobileYTIcon}>
+            <img src={YOUTUBE_MOBILE_ICON} alt="YOUTUBE_ICON"></img>
           </span>
         </Link>
       </div>

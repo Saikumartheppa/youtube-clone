@@ -2,7 +2,7 @@
 
 /* Apply globally */
 body {
-  margin: 0;
+  margin: 0 ;
   padding: 0 1.5vw;
   font-family: 'Roboto', sans-serif;
   background-color: #ffffff;
@@ -15,4 +15,9 @@ a {
   --primary-bg: #f2f2f2f2;
   --secondary-bg: #eaeaea;
   --primary-text: #0f0f0f;
+}
+@media (max-width: 500px) {
+  body{
+    padding: 0 3vw;
+  }
 }
