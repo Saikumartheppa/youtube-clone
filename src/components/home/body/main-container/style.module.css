@@ -8,3 +8,8 @@
 .menuClose{
     max-width: 90vw;
 }
+@media (max-width: 767px) {
+    .mainContainer{
+        margin: 0;
+    }
+}

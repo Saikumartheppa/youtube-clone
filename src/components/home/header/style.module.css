@@ -233,6 +233,7 @@
 @media (max-width: 639px) {
   .container {
     padding-top: 2vh;
+    width: 94vw;
   }
   .search input {
     width: 60vw;

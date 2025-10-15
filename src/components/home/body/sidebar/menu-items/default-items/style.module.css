@@ -18,3 +18,8 @@
     height: 40px;
     object-fit: cover;
 }    
+@media (max-width : 639px){
+    .defaultItemsList{
+      display: none;
+    }
+}

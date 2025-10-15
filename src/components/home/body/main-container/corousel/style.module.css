@@ -1,36 +1,38 @@
 .carouselWrapper {
-  position: fixed;        
-  width: 100%;            
+  position: fixed;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* z-index: 1000;           */
   padding: 10px 0;
   overflow: hidden;
   background-color: white;
 }
-.menuOpen{
-   max-width: 76vw;
+
+.menuOpen {
+  max-width: 76vw;
 }
-.menuClose{
-   max-width: 89vw;
+
+.menuClose {
+  max-width: 83vw;
 }
+
 .carouselContainer {
-  overflow-x: auto;
+  overflow-x: auto; /* Enable horizontal scrolling */
   overflow-y: hidden;
   scroll-behavior: smooth;
-  scrollbar-width: none;     
-  flex: 1;                   
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  flex: 1;
 }
 
 .carouselContainer::-webkit-scrollbar {
-  display: none;            
+  display: none; /* Hide scrollbar for Webkit browsers */
 }
 
 .carousel {
   display: flex;
-  gap: 16px;               
-  white-space: nowrap;     
+  gap: 16px;
+  white-space: nowrap; /* Prevent items from wrapping */
 }
 
 .arrowButton {
@@ -53,4 +55,63 @@
 
 .right {
   right: 0px;
+}
+
+/* Responsive styles */
+@media (max-width: 767px) {
+  .carouselWrapper {
+    padding: 5px 0;
+  }
+
+  .carouselContainer {
+    overflow-x: auto; /* Ensure horizontal scrolling is enabled */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
+  }
+
+  .carousel {
+    gap: 8px;
+  }
+
+  .arrowButton {
+    display: none; /* Hide arrow buttons on smaller screens */
+  }
+}
+
+@media (max-width: 639px) {
+  .menuOpen ,
+  .menuClose {
+    max-width: 94vw;
+  }
+
+  .carouselContainer {
+    overflow-x: auto; /* Ensure horizontal scrolling is enabled */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
+  }
+
+  .carousel {
+    gap: 6px;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+  .carousel {
+    gap: 10px;
+  }
+  .menuOpen {
+    max-width: 74vw;
+  }
+}
+
+@media (min-width: 1280px) {
+  .carousel {
+    gap: 20px;
+  }
+
+  .arrowButton {
+    width: 40px;
+    height: 40px;
+  }
+  .menuClose {
+    max-width: 88vw;
+  }
 }
