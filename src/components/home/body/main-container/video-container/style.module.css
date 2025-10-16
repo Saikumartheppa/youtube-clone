@@ -1,18 +1,14 @@
 .videoContainer {
   margin-top: 70px;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 16px;
   max-height: 80vh;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
-  gap: 10px;
+  padding: 10px;
 }
-.menuOpen{
-  gap: 10px;
-}
-.menuClose {
-  gap: 24px;
-}
+
 .videoContainer::-webkit-scrollbar {
   display: none;
 }

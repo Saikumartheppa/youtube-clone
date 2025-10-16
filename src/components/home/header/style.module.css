@@ -235,7 +235,8 @@
     padding-top: 2vh;
     width: 94vw;
   }
-  .search input {
+  .search input ,
+  .suggestionsContainer{
     width: 60vw;
   }
   .search {
@@ -244,7 +245,8 @@
 }
 
 @media (min-width: 640px) and (max-width: 767px) {
-  .search input {
+  .search input ,
+  .suggestionsContainer{
     width: 70vw;
   }
 }

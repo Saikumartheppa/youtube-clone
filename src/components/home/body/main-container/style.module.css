@@ -3,7 +3,7 @@
     overflow: hidden;
 }
 .menuOpen{
-    max-width: 76vw;
+    max-width: 79vw;
 }
 .menuClose{
     max-width: 90vw;
@@ -26,6 +26,6 @@
 @media (min-width: 767px) and (max-width: 1200px) {
     .menuOpen,
      .menuClose{
-        max-width: 92vw;
+        max-width: 94vw;
     }
 }

@@ -10,7 +10,7 @@
 }
 
 .menuOpen {
-  max-width: 76vw;
+  max-width: 78vw;
 }
 
 .menuClose {
@@ -119,6 +119,6 @@
 @media (min-width: 767px) and (max-width: 1200px) {
   .menuOpen ,
    .menuClose{
-    max-width: 92vw;
+    max-width: 93vw;
   }
 }

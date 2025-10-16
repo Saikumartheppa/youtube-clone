@@ -1,3 +1,21 @@
 .watchPage{
     margin: 0 2vw;
 }
+iframe{
+    width: 90vw;
+    height: 30vh;
+    border: none;
+    padding-top: 20px;
+}
+@media (min-width: 767px) {
+    iframe{
+        width: 93vw;
+        height: 60vh;
+    }
+}
+@media (min-width: 1200px) {
+    iframe{
+        width: 95vw;
+        height: 80vh;
+    }
+}

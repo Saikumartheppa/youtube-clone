@@ -22,8 +22,6 @@ const WatchPage = () => {
     <div className={styles.watchPage}>
       <div>
         <iframe
-          width="800"
-          height="450"
           src={GET_YOUTUBE_VIDEO_BY_ID(videoId)}
           title="YouTube video player"
           frameBorder="0"
