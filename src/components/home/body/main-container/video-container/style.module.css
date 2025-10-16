@@ -1,18 +1,18 @@
-.videoContainer{
+.videoContainer {
   margin-top: 70px;
   display: flex;
   flex-wrap: wrap;
   max-height: 80vh;
   overflow-y: scroll;
   overflow-x: hidden;
-   gap: 10px;
+  gap: 10px;
 }
 .menuOpen{
-    gap: 10px;
+  gap: 10px;
 }
-.menuClose{
-  gap: 22px;
+.menuClose {
+  gap: 24px;
 }
 .videoContainer::-webkit-scrollbar {
-    display: none;
+  display: none;
 }

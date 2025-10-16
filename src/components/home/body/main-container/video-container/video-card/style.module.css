@@ -1,18 +1,24 @@
 .thumbnailIconContainer {
   border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 380px;
+  height: auto;
 }
 .menuOpen {
-  width: 330px;
+  width: 310px;
   height: 190px;
 }
 .menuClose {
-  width: 380px;
+  width: 400px;
   height: 220px;
 }
 .thumbnailIconContainer img {
+  display: block;
   width: 100%;
   height: 100%;
   border-radius: 15px;
+  object-fit: cover;
 }
 .cardInfo {
   display: flex;
@@ -20,34 +26,41 @@
   align-items: center;
   margin-top: 10px;
   gap: 20px;
+  width: 100%;
 }
-.cardCLosedWidth{
-  width: 380px;
+.cardCLosedWidth,
+.cardClosedWidth {
+  /* keep both names in case of typo in markup */
+  width: 360px;
 }
-.cardOpenWidth{
-  width: 330px;
+.cardOpenWidth {
+  width: 310px;
 }
 .channelProfile img {
   width: 36px;
   height: 36px;
   border-radius: 50%;
+  object-fit: cover;
 }
 .videoInfo {
-  overflow: hidden; /* Hides content that overflows the element's box */
-  display: -webkit-box; /* Enables flexible box layout for multi-line truncation */
-  -webkit-line-clamp: 2; /* Limits the content to 2 lines */
-  -webkit-box-orient: vertical; /* Arranges the content vertically within the box */
-  text-overflow: ellipsis; /* Adds an ellipsis (...) at the end of the truncated text */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
   white-space: normal;
   font-size: 16px;
   font-weight: 500;
+  line-height: 1.2;
 }
 .menuIconContainer {
   height: 36px;
   width: 36px;
+  flex: 0 0 36px;
 }
 .channelTitle {
   display: flex;
+  align-items: center;
   color: #606060;
   margin-left: 56px;
   gap: 5px;
@@ -60,11 +73,165 @@
 }
 .channelTitle img {
   width: 14px;
-  color: #606060;
+  height: auto;
 }
 .statistics {
   font-weight: 400;
   font-size: 14px;
   margin-left: 56px;
   color: #606060;
+}
+
+/* Responsive overrides (matching header breakpoints) */
+
+/* Large tablets / small desktops */
+@media (max-width: 1200px) {
+  .menuClose {
+    width: 340px;
+    height: 200px;
+  }
+  .menuOpen {
+    width: 300px;
+    height: 175px;
+  }
+  .cardCLosedWidth {
+    width: 340px;
+  }
+  .cardOpenWidth {
+    width: 300px;
+  }
+  .thumbnailIconContainer img {
+    border-radius: 12px;
+  }
+  .channelProfile img {
+    width: 32px;
+    height: 32px;
+  }
+  .channelTitle {
+    margin-left: 48px;
+  }
+  .statistics {
+    margin-left: 48px;
+    font-size: 13px;
+  }
+  .videoInfo {
+    font-size: 15px;
+  }
+}
+
+/* Tablets and landscape phones (matches header mobile breakpoint) */
+@media (max-width: 767px) {
+  .menuClose,
+  .menuOpen,
+  .cardCLosedWidth,
+  .cardClosedWidth,
+  .cardOpenWidth {
+    width: 100%;
+    height: auto;
+    max-width: none;
+  }
+  .thumbnailIconContainer {
+    width: 100%;
+    height: auto;
+  }
+  .thumbnailIconContainer img {
+    height: auto;
+  }
+  .cardInfo {
+    gap: 12px;
+  }
+  .channelProfile img {
+    width: 28px;
+    height: 28px;
+  }
+  .channelTitle {
+    margin-left: 44px;
+    gap: 6px;
+    padding: 4px 0;
+  }
+  .channelTitle h2 {
+    font-size: 13px;
+  }
+  .videoInfo {
+    -webkit-line-clamp: 2;
+    font-size: 14px;
+  }
+  .menuIconContainer {
+    height: 34px;
+    width: 34px;
+  }
+  .statistics {
+    margin-left: 44px;
+  }
+}
+
+/* Narrow phones */
+@media (max-width: 639px) {
+  .container, /* if used in markup */
+  .cardInfo {
+    width: 100%;
+  }
+  .cardInfo {
+    gap: 10px;
+  }
+  .channelTitle {
+    margin-left: 0;
+    padding-left: 34px;
+    gap: 8px;
+    align-items: center;
+  }
+  .channelProfile img {
+    width: 24px;
+    height: 24px;
+  }
+  .videoInfo {
+    font-size: 14px;
+    -webkit-line-clamp: 2;
+  }
+  .statistics {
+    margin-left: 34px;
+    font-size: 13px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 480px) {
+  .thumbnailIconContainer {
+    width: 100%;
+  }
+  .thumbnailIconContainer img {
+    border-radius: 10px;
+  }
+  .channelTitle h2 {
+    font-size: 14px;
+  }
+  .menuIconContainer {
+    height: 30px;
+    width: 30px;
+  }
+}
+
+/* Large screens - small spacing bump */
+@media (min-width: 1280px) {
+  .rightContainer,
+  .leftContainer {
+    gap: 1vw;
+  }
+  .cardInfo {
+    gap: 22px;
+  }
+}
+@media (min-width: 767px) and (max-width: 1200px) {
+  .menuOpen {
+    max-width: 92vw;
+  }
+  .menuClose,
+  .menuOpen {
+    width: 345px;
+    height: 190px;
+  }
+  .cardCLosedWidth,
+  .cardOpenWidth {
+    width: 345px;
+  }
 }

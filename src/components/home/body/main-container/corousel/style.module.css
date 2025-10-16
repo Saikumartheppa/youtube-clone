@@ -97,8 +97,9 @@
   .carousel {
     gap: 10px;
   }
-  .menuOpen {
-    max-width: 74vw;
+  .menuOpen,
+   .menuClose {
+    max-width: 96vw;
   }
 }
 
@@ -112,6 +113,12 @@
     height: 40px;
   }
   .menuClose {
-    max-width: 88vw;
+    max-width: 89vw;
+  }
+}
+@media (min-width: 767px) and (max-width: 1200px) {
+  .menuOpen ,
+   .menuClose{
+    max-width: 92vw;
   }
 }
